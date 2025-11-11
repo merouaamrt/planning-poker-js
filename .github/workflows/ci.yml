@@ -1,0 +1,53 @@
+name: CI - Tests et Documentation Planning Poker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    name: Tests unitaires (Jest)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  Checkout du code
+        uses: actions/checkout@v3
+
+      - name:  Configuration de Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name:  Installation des dépendances
+        run: npm install
+
+      - name:  Lancer les tests Jest
+        run: npm test
+
+  docs:
+    name: Génération de la documentation JSDoc
+    runs-on: ubuntu-latest
+    needs: tests  # La doc se génère seulement si les tests passent
+
+    steps:
+      - name:  Checkout du code
+        uses: actions/checkout@v3
+
+      - name:  Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name:  Installation des dépendances
+        run: npm install jsdoc -g
+
+      - name:  Génération de la documentation
+        run: jsdoc planningPoker.js -d docs
+
+      - name:  Déploiement de la documentation sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
