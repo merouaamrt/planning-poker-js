@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "fonctionnalites": [
+    {
+      "id": 1,
+      "titre": "Connexion",
+      "description": "Permettre aux utilisateurs de se connecter."
+    },
+    {
+      "id": 2,
+      "titre": "Création ticket",
+      "description": "Créer une fonctionnalité dans le backlog."
+    },
+    {
+      "id": 3,
+      "titre": "Export PDF",
+      "description": "Exporter les estimations au format PDF."
+    }
+  ]
+}

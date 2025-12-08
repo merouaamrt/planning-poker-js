@@ -1,0 +1,43 @@
+{
+  "idPartie": 1234,
+  "modeDeJeu": "strict",
+  "statutPartie": "created",
+  "listeJoueurs": [
+    {
+      "id": 1,
+      "pseudo": "Alice",
+      "estConnecte": true,
+      "carteChoisie": null
+    },
+    {
+      "id": 2,
+      "pseudo": "Bob",
+      "estConnecte": true,
+      "carteChoisie": null
+    }
+  ],
+  "backlog": {
+    "id": 1,
+    "fonctionnalites": [
+      {
+        "id": 1,
+        "titre": "Connexion",
+        "description": "Permettre aux utilisateurs de se connecter.",
+        "estimationFinale": null,
+        "statut": "pending"
+      },
+      {
+        "id": 2,
+        "titre": "Création ticket",
+        "description": "Créer une fonctionnalité dans le backlog.",
+        "estimationFinale": null,
+        "statut": "pending"
+      }
+    ]
+  },
+  "currentIndex": 0,
+  "votes": {},
+  "isPaused": false,
+  "scrumMaster": "Alice",
+  "roundCount": 0
+}

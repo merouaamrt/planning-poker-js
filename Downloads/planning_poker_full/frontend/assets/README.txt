@@ -1,0 +1,1 @@
+Assets for frontend (style and JS)
