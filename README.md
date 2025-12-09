@@ -1,8 +1,17 @@
+# Planning Poker – Version 3.0
 
-## Version 2.0 – Ajout du système de votes
+## Contenu ajouté
+- Ajout complet des **contrôleurs** :
+  - BacklogController
+  - VoteController
+  - PartieController
+  - SessionController
 
-- Ajout du service VoteService pour gérer les votes.
-- Ajout du stockage JSON (JsonStorage).
-- Ajout d’un premier test unitaire.
-- Préparation pour les contrôleurs dans la prochaine version.
+- Backend désormais structuré en :
+  - Models
+  - Services
+  - Controllers
 
+- Ajout d’un test unitaire pour VoteService
+- Sauvegarde JSON
+- Architecture MVC simplifiée

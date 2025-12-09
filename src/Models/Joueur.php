@@ -1,20 +1,18 @@
 <?php
+
 class Joueur {
-    public $id;
-    public $pseudo;
-    public $carteChoisie = null;
-    public $estConnecte = true;
+    public string $nom;
+    public ?int $vote = null;
 
-    public function __construct($id, $pseudo) {
-        $this->id = $id;
-        $this->pseudo = $pseudo;
+    public function __construct(string $nom) {
+        $this->nom = $nom;
     }
 
-    public function choisirCarte($valeur) {
-        $this->carteChoisie = $valeur;
+    public function choisirCarte(int $valeur): void {
+        $this->vote = $valeur;
     }
 
-    public function resetVote() {
-        $this->carteChoisie = null;
+    public function resetVote(): void {
+        $this->vote = null;
     }
 }
