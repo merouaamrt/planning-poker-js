@@ -12,5 +12,5 @@ L’objectif est :
 - de mettre en place l’intégration continue (CI),
 - d’avoir une base propre et évolutive pour les prochaines versions.
 
-## 📂 Contenu de cette version
+
 
