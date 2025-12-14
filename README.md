@@ -1,13 +1,15 @@
-# Planning Poker – Version 4
+# Planning Poker – Backend
 
-Backend PHP d’une application de Planning Poker.
+Backend d’une application de planning poker.
 
-## Fonctionnalités
-- Gestion des joueurs
-- Système de votes
-- Calcul unanimité / moyenne / médiane
-- Backlog de fonctionnalités
-- Architecture MVC simple
+## Version 5 – Gestion de l’état d’une partie
 
-## Objectif
-Préparer un backend clair et évolutif pour une application planning poker 
+Cette version introduit la gestion du cycle de vie d’une partie :
+
+- États possibles : en attente, en cours, en pause, terminée
+- Service dédié pour gérer l’état d’une partie
+- Service de persistance pour sauvegarder et recharger l’état
+- Données stockées en JSON
+- Test simple sur les changements d’état
+
+Le projet est structuré selon une architecture MVC progressive.
