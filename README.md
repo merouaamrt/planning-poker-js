@@ -10,4 +10,4 @@ Backend PHP d’une application de Planning Poker.
 - Architecture MVC simple
 
 ## Objectif
-Préparer un backend clair et évolutif pour une application type Kollabe.
+Préparer un backend clair et évolutif pour une application planning poker 
