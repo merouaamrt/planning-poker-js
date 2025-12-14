@@ -1,31 +1,25 @@
 <?php
 
-require_once __DIR__ . '/../Services/VoteService.php';
+require_once __DIR__ . '/../Models/Partie.php';
 
 class VoteController {
+    private Partie $partie;
 
-    private VoteService $service;
-
-    public function __construct() {
-        $this->service = new VoteService();
+    public function __construct(Partie $partie) {
+        $this->partie = $partie;
     }
 
-    public function voter() {
-        $joueur = $_POST['joueur'] ?? null;
-        $valeur = intval($_POST['valeur'] ?? -1);
+    public function voter(): void {
+        $pseudo = $_POST['pseudo'] ?? null;
+        $valeur = $_POST['valeur'] ?? null;
 
-        if (!$joueur || $valeur < 0) {
+        if (!$pseudo || !$valeur) {
             http_response_code(400);
-            echo "Paramètres invalides";
+            echo "Paramètres manquants";
             return;
         }
 
-        $this->service->ajouterVote($joueur, $valeur);
+        $this->partie->voter($pseudo, (int)$valeur);
         echo "Vote enregistré";
-    }
-
-    public function reset() {
-        $this->service->resetVotes();
-        echo "Votes réinitialisés";
     }
 }

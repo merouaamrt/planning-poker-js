@@ -1,5 +1,15 @@
 <?php
 
 class Carte {
-    public static array $VALEURS = [1,2,3,5,8,13,21,'?','☕'];
+    private int $valeur;
+    private string $type;
+
+    public function __construct(int $valeur, string $type = 'standard') {
+        $this->valeur = $valeur;
+        $this->type = $type;
+    }
+
+    public function getValeur(): int {
+        return $this->valeur;
+    }
 }

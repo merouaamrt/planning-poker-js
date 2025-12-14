@@ -1,17 +1,15 @@
 <?php
 
-require_once __DIR__ . '/../Services/PartieService.php';
+require_once __DIR__ . '/../Models/Backlog.php';
 
 class BacklogController {
+    private Backlog $backlog;
 
-    private PartieService $service;
-
-    public function __construct() {
-        $this->service = new PartieService();
+    public function __construct(Backlog $backlog) {
+        $this->backlog = $backlog;
     }
 
-    public function afficher() {
-        header('Content-Type: application/json');
-        echo json_encode($this->service->getBacklog()->getTaches());
+    public function lister(): void {
+        echo json_encode($this->backlog->getToutes());
     }
 }

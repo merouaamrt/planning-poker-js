@@ -1,17 +1,13 @@
-# Planning Poker – Version 3.0
+# Planning Poker – Version 4
 
-## Contenu ajouté
-- Ajout complet des **contrôleurs** :
-  - BacklogController
-  - VoteController
-  - PartieController
-  - SessionController
+Backend PHP d’une application de Planning Poker.
 
-- Backend désormais structuré en :
-  - Models
-  - Services
-  - Controllers
+## Fonctionnalités
+- Gestion des joueurs
+- Système de votes
+- Calcul unanimité / moyenne / médiane
+- Backlog de fonctionnalités
+- Architecture MVC simple
 
-- Ajout d’un test unitaire pour VoteService
-- Sauvegarde JSON
-- Architecture MVC simplifiée
+## Objectif
+Préparer un backend clair et évolutif pour une application type Kollabe.
