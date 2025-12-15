@@ -12,6 +12,13 @@ class Partie {
     private GestionVotes $votes;
     private int $indexCourant = 0;
 
+    
+    
+    private string $etat = 'en_attente';
+
+
+    private ?string $sessionId = null;
+
     public function __construct(int $id, Backlog $backlog) {
         $this->id = $id;
         $this->backlog = $backlog;
@@ -22,6 +29,12 @@ class Partie {
         $this->joueurs[] = $joueur;
     }
 
+    public function getJoueurs(): array {
+        return $this->joueurs;
+    }
+
+
+
     public function voter(string $joueur, int $valeur): void {
         $this->votes->ajouterVote($joueur, $valeur);
     }
@@ -29,8 +42,8 @@ class Partie {
     public function resultat(): array {
         return [
             'unanimite' => $this->votes->estUnanime(),
-            'moyenne' => $this->votes->moyenne(),
-            'mediane' => $this->votes->mediane()
+            'moyenne'   => $this->votes->moyenne(),
+            'mediane'   => $this->votes->mediane()
         ];
     }
 
@@ -38,22 +51,31 @@ class Partie {
         $this->votes->reset();
         $this->indexCourant++;
     }
-    private string $etat = 'en_attente';
 
-public function demarrer(): void {
-    $this->etat = 'en_cours';
-}
 
-public function mettreEnPause(): void {
-    $this->etat = 'en_pause';
-}
+    public function demarrer(): void {
+        $this->etat = 'en_cours';
+    }
 
-public function terminer(): void {
-    $this->etat = 'terminee';
-}
+    public function mettreEnPause(): void {
+        $this->etat = 'en_pause';
+    }
 
-public function getEtat(): string {
-    return $this->etat;
-}
+    public function terminer(): void {
+        $this->etat = 'terminee';
+    }
 
+    public function getEtat(): string {
+        return $this->etat;
+    }
+
+   
+
+    public function setSessionId(string $sessionId): void {
+        $this->sessionId = $sessionId;
+    }
+
+    public function getSessionId(): ?string {
+        return $this->sessionId;
+    }
 }
