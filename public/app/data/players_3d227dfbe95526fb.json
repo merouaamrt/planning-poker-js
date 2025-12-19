@@ -1,0 +1,14 @@
+{
+    "sid": "3d227dfbe95526fb",
+    "players": [
+        {
+            "id": 1,
+            "name": "Joueur1"
+        },
+        {
+            "id": 2,
+            "name": "Joueur2"
+        }
+    ],
+    "updatedAt": "2025-12-19T10:18:11+00:00"
+}

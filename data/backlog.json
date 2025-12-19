@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "fonctionnalites": [
+    {
+      "id": 1,
+      "titre": "Connexion utilisateur",
+      "description": "Permet à un joueur de rejoindre une partie",
+      "estimationFinale": null,
+      "statut": "a_estimer"
+    },
+    {
+      "id": 2,
+      "titre": "Vote des joueurs",
+      "description": "Chaque joueur peut choisir une carte",
+      "estimationFinale": null,
+      "statut": "a_estimer"
+    }
+  ]
+}
+

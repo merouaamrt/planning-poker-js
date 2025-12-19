@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choisir le mode de jeu</title>
+  <link rel="stylesheet" href="mode.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Choisir le mode de jeu</h1>
+    <p class="muted">
+      Le mode Strict (unanimité) est toujours appliqué au 1er tour.
+      Si l’unanimité n’est pas atteinte, les tours suivants utilisent la règle secondaire.
+    </p>
+
+    <section class="card">
+      <h2>Type de partie</h2>
+
+      <div class="grid2">
+        <label class="choice">
+          <input type="radio" name="playMode" value="remote" checked>
+          <div>
+            <div class="choice-title">À distance</div>
+            <div class="choice-sub">Chaque joueur vote depuis son appareil.</div>
+          </div>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="playMode" value="local">
+          <div>
+            <div class="choice-title">Locale</div>
+            <div class="choice-sub">Un seul appareil, les joueurs votent chacun à leur tour.</div>
+          </div>
+        </label>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <label for="playersCount"><strong>Nombre de joueurs</strong></label>
+          <input id="playersCount" type="number" min="2" max="20" value="5">
+          <div class="muted small">Entre 2 et 20.</div>
+        </div>
+
+        <div>
+          <label for="projectName"><strong>Nom du projet (optionnel)</strong></label>
+          <input id="projectName" type="text" placeholder="Ex: Sprint 12 — Refactoring">
+          <div class="muted small">Utilisé pour afficher/organiser la partie.</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div>
+          <label for="secondaryRule"><strong>Règle secondaire</strong></label>
+          <select id="secondaryRule">
+            <option value="median" selected>Médiane</option>
+            <option value="average">Moyenne</option>
+            <option value="absolute_majority">Majorité absolue</option>
+            <option value="relative_majority">Majorité relative</option>
+          </select>
+          <div class="muted small">Utilisée à partir du 2ᵉ tour si désaccord.</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="actions">
+        <button id="continueBtn" type="button" class="btn btn-primary">Continuer</button>
+      </div>
+
+      <div id="modeMsg" class="msg" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="mode.js"></script>
+</body>
+</html>

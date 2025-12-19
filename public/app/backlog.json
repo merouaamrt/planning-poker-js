@@ -1,0 +1,23 @@
+[
+  {
+    "id": "US-001",
+    "title": "User registration",
+    "description": "As a user, I want to create an account so that I can access the application.",
+    "priority": "High",
+    "storyPoints": 5
+  },
+  {
+    "id": "US-002",
+    "title": "User login",
+    "description": "As a user, I want to log in securely using my credentials.",
+    "priority": "High",
+    "storyPoints": 3
+  },
+  {
+    "id": "US-003",
+    "title": "Password reset",
+    "description": "As a user, I want to reset my password if I forget it.",
+    "priority": "Medium",
+    "storyPoints": 3
+  }
+]

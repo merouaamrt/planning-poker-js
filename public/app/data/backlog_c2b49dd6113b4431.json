@@ -1,0 +1,34 @@
+{
+    "sid": "c2b49dd6113b4431",
+    "cursor": 3,
+    "items": [
+        {
+            "id": "US-001",
+            "title": "User registration",
+            "description": "As a user, I want to create an account so that I can access the application.",
+            "status": "done",
+            "estimation": "2",
+            "rounds": [],
+            "updatedAt": "2025-12-19T04:16:35+00:00"
+        },
+        {
+            "id": "US-002",
+            "title": "User login",
+            "description": "As a user, I want to log in securely using my credentials.",
+            "status": "done",
+            "estimation": "1",
+            "rounds": [],
+            "updatedAt": "2025-12-19T04:16:48+00:00"
+        },
+        {
+            "id": "US-003",
+            "title": "Password reset",
+            "description": "As a user, I want to reset my password if I forget it.",
+            "status": "done",
+            "estimation": "1",
+            "rounds": [],
+            "updatedAt": "2025-12-19T04:17:55+00:00"
+        }
+    ],
+    "updatedAt": "2025-12-19T04:17:55+00:00"
+}

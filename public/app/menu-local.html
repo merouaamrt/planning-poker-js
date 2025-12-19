@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning Poker — Menu Local</title>
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-left">
+    <img src="ppoker.png" alt="Logo" class="logo" />
+    <span class="site-name">Planning Poker</span>
+  </div>
+  <nav class="header-nav">
+    <a href="mode.html" class="nav-link">Changer de mode</a>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="wrap">
+
+    <div class="head">
+      <h1>Menu Local</h1>
+      <p class="muted">Configuration locale du Planning Poker</p>
+      <button id="clearAllBtn" class="btn btn-ghost">Réinitialiser</button>
+    </div>
+
+    <div class="grid">
+
+      <!-- Colonne gauche -->
+      <div class="col">
+
+        <!-- Résumé -->
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Résumé</h2>
+            <span id="configBadge" class="badge">—</span>
+          </div>
+          <div class="summary">
+            <div class="summary-item"><div class="k">Projet</div><div id="sumProject" class="v">—</div></div>
+            <div class="summary-item"><div class="k">Joueurs</div><div id="sumPlayers" class="v">—</div></div>
+            <div class="summary-item"><div class="k">Règle secondaire</div><div id="sumSecondaryRule" class="v">—</div></div>
+          </div>
+        </div>
+
+        <!-- Options local -->
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Options local</h2>
+            <span class="muted small">enregistrées côté serveur</span>
+          </div>
+
+          <div class="local-options">
+            <label for="moderatorName">Animateur (optionnel)</label>
+            <input id="moderatorName" type="text" placeholder="Scrum Master">
+
+            <label for="revealMode">Révélation des votes</label>
+            <select id="revealMode">
+              <option value="manual">Manuelle</option>
+              <option value="auto">Automatique</option>
+            </select>
+
+            <!-- 🔵 Ajout timing -->
+            <label for="voteDurationSec">Durée du vote (secondes)</label>
+            <input id="voteDurationSec" type="number" min="10" max="600" step="5" value="60">
+
+            <label style="display:flex;align-items:center;gap:8px;margin-top:10px;">
+              <input id="autoRevealOnTimeout" type="checkbox">
+              Révéler automatiquement à la fin du temps
+            </label>
+          </div>
+
+          <div class="row">
+            <button id="saveLocalOptionsBtn" class="btn btn-primary">Enregistrer options</button>
+          </div>
+          <div id="localMsg" class="msg"></div>
+        </div>
+
+        <!-- Joueurs -->
+        <div class="card">
+          <h2>Joueurs</h2>
+          <div id="playersForm" class="players"></div>
+          <div class="row">
+            <button id="autoFillBtn" class="btn btn-ghost">Auto</button>
+            <button id="savePlayersBtn" class="btn btn-primary">Enregistrer joueurs</button>
+          </div>
+          <div id="playersMsg" class="msg"></div>
+        </div>
+
+      </div>
+
+      <!-- Colonne droite -->
+      <div class="col">
+
+        <div class="card">
+          <h2>Backlog</h2>
+          <input id="backlogFile" type="file" accept=".json">
+          <button id="loadBacklogBtn" class="btn btn-primary">Charger</button>
+          <div id="backlogMsg" class="msg"></div>
+          <div id="backlogPreview" class="preview-list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Démarrer</h2>
+          <div id="startError" class="error"></div>
+          <button id="startBtn" class="btn btn-primary btn-big">Lancer la partie</button>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="menu-local.js"></script>
+</body>
+</html>
